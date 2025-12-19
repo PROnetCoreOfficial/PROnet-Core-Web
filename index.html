@@ -7,7 +7,7 @@
     
     <meta property="og:title" content="PROnet Core - 工業與文化的交匯">
     <meta property="og:description" content="Forge 1.20.1 模組伺服器。體驗 Create 機械動力、異國美食與獨家帳號連結系統。">
-    <meta property="og:image" content="https://i.imgur.com/your-image-placeholder.jpg"> <meta property="og:type" content="website">
+    <meta property="og:type" content="website">
     <meta name="theme-color" content="#2962ff">
 
     <style>
@@ -112,7 +112,7 @@
 
         .hero p { font-size: 1.2rem; color: var(--text-sub); margin-bottom: 40px; max-width: 700px; }
 
-        /* IP 複製區塊 (更精緻的樣式) */
+        /* IP 複製區塊 */
         .ip-container {
             position: relative;
             margin-bottom: 40px;
@@ -200,7 +200,7 @@
         .online .status-dot { background: var(--success); box-shadow: 0 0 10px var(--success); }
         .online span { color: var(--success); }
 
-        /* 步驟教學區 (How to Join) */
+        /* 步驟教學區 */
         .section-title { text-align: center; font-size: 2rem; margin-bottom: 50px; color: var(--text-main); }
         .section-title span { border-bottom: 3px solid var(--primary); padding-bottom: 10px; }
 
@@ -341,81 +341,3 @@
                 <h3>連結帳號</h3>
                 <p>進入遊戲後輸入 <code>/discord link</code>，並在 Discord 輸入驗證碼，解鎖 <strong>高級核心成員</strong> 權限！</p>
                 <a href="https://discord.gg/EFBknuVcNM" target="_blank" class="step-link">去 Discord 驗證 &rarr;</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="features-container">
-        <div class="features">
-            <div class="feature-card">
-                <span class="feature-icon">⚙️</span>
-                <h3>Create 機械動力</h3>
-                <p>體驗最硬核的工業美學。從水車動力到複雜的自動化流水線，建造屬於你的超級工廠。</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">🍱</span>
-                <h3>Delight 文化美食</h3>
-                <p>結合 Farmer's Delight 與 Cultural Delights。製作壽司、漢堡與各式異國料理，呼應文化體驗主題。</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">🚂</span>
-                <h3>Steam 'n' Rails</h3>
-                <p>不僅僅是工業，還有交通。鋪設鐵路網，建造真實的蒸氣火車，連接地圖上的每一個角落。</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 PROnet Core Server. Powered by Create & Forge.</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.5;">Designed for Curb Center Project</p>
-    </footer>
-
-    <script>
-        const serverIP = 'play.PROnetCore.dpdns.org';
-
-        function copyIP() {
-            navigator.clipboard.writeText(serverIP).then(() => {
-                const hint = document.querySelector('.copy-hint');
-                const ipText = document.getElementById('server-ip');
-                const originalText = hint.innerText;
-                
-                hint.innerText = "已複製到剪貼簿！";
-                hint.style.color = "var(--success)";
-                hint.style.opacity = "1";
-                ipText.style.color = "var(--success)";
-                
-                setTimeout(() => {
-                    hint.innerText = originalText;
-                    hint.style.color = "var(--accent)";
-                    hint.style.opacity = "0";
-                    ipText.style.color = "#fff";
-                }, 2000);
-            });
-        }
-
-        async function fetchStatus() {
-            const statusDiv = document.getElementById('server-status');
-            const countSpan = document.getElementById('player-count');
-            
-            try {
-                const response = await fetch(`https://api.mcsrvstat.us/2/${serverIP}`);
-                const data = await response.json();
-
-                if (data.online) {
-                    statusDiv.classList.add('online');
-                    countSpan.innerText = `🟢 伺服器線上: ${data.players.online} / ${data.players.max} 人`;
-                } else {
-                    statusDiv.classList.remove('online');
-                    countSpan.innerText = "🔴 伺服器離線 / 啟動中";
-                }
-            } catch (error) {
-                console.error('Error fetching status:', error);
-                countSpan.innerText = "⚪ 無法獲取狀態";
-            }
-        }
-
-        window.onload = fetchStatus;
-        setInterval(fetchStatus, 60000);
-    </script>
-</body>
-</html>
