@@ -74,7 +74,7 @@
             letter-spacing: 1px; 
             color: var(--text-main); 
             text-decoration: none;
-            text-transform: uppercase;
+            /* 移除了 text-transform: uppercase; 以保留大小寫 */
         }
         .logo span { color: var(--primary); }
 
@@ -301,43 +301,4 @@
         <div class="ip-container">
             <div class="ip-box" onclick="copyIP()">
                 <div class="ip-text" id="server-ip">play.PROnetCore.dpdns.org</div>
-                <svg class="copy-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            </div>
-            <div class="copy-hint">點擊複製 IP 地址</div>
-        </div>
-
-        <div class="btn-group">
-            <a href="https://drive.google.com/file/d/1_-Gyhv3q930eYHfh9_wIZ6zBu9qP4zxL/view?usp=sharing" target="_blank" class="btn btn-discord" style="background: var(--primary);">
-                📥 下載專用模組包
-            </a>
-            <a href="https://discord.gg/EFBknuVcNM" target="_blank" class="btn btn-modpack">
-                💬 加入 Discord
-            </a>
-        </div>
-
-        <div id="server-status" class="server-status-bar">
-            <div class="status-dot"></div>
-            <span id="player-count">正在連線至伺服器...</span>
-        </div>
-    </div>
-
-    <div class="steps-container">
-        <div class="section-title"><span>如何加入伺服器</span></div>
-        <div class="steps">
-            <div class="step-card">
-                <div class="step-num">01</div>
-                <h3>下載與安裝</h3>
-                <p>下載我們的 Lite 模組包，並將其安裝到您的 CurseForge 或 Minecraft 啟動器中。</p>
-                <a href="https://drive.google.com/file/d/1_-Gyhv3q930eYHfh9_wIZ6zBu9qP4zxL/view?usp=sharing" target="_blank" class="step-link">前往下載 &rarr;</a>
-            </div>
-            <div class="step-card">
-                <div class="step-num">02</div>
-                <h3>連線遊戲</h3>
-                <p>啟動遊戲 (Forge 1.20.1)，在多人遊戲中新增伺服器，填入 IP 地址即可連線。</p>
-                <p style="color: var(--primary); font-family: monospace;">play.PROnetCore.dpdns.org</p>
-            </div>
-            <div class="step-card">
-                <div class="step-num">03</div>
-                <h3>連結帳號</h3>
-                <p>進入遊戲後輸入 <code>/discord link</code>，並在 Discord 輸入驗證碼，解鎖 <strong>高級核心成員</strong> 權限！</p>
-                <a href="https://discord.gg/EFBknuVcNM" target="_blank" class="step-link">去 Discord 驗證 &rarr;</a>
+                <svg class="copy-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2
